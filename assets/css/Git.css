@@ -1,0 +1,23 @@
+#repogit{
+    padding: 0;
+    overflow-y: auto;
+}
+#repogit li{
+    list-style-type: none;
+    border: solid 1px rgb(211, 211, 211);
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    font-weight: 800;
+    border-radius: 10px;
+    
+}
+ li:hover{
+    background-color: rgba(39, 170, 115, 0.205);
+    transition: 1;
+    cursor: pointer;
+}
+#repogit span{
+    font-size: 11pt;
+    font-weight: 300;
+}
