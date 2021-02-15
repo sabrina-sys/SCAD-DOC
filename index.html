@@ -10,53 +10,84 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/Styles.css" />
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <link rel="stylesheet" href="./assets/css/Git.css" />
-    <link rel="icon" href="./assets/img/icon2.png" >
+    <link rel="icon" href="./assets/img/icon2.png" />
     <title>SCAD | Documentacion</title>
   </head>
   <body>
-    <!-- Side navigation -->
-    
-    <nav id="sidenav" class="sidenav">
-      <div  class="header-side">
-        <img  src="./assets/img/logo2.jpg" alt="" >
-        <a href="/">SCAD-1</a>
+    <div id="app" class="container-fluid">
+      <div class="header-scad row p-2 bg-light">
+        <ion-icon name="contrast-outline" class="px-2"></ion-icon>
+        <h4>SCAD-ONE</h4>
       </div>
-      <div id="menunav"></div>
-    </nav>
 
-    <!-- Page content -->
-    <div class="main">
-    
-      <div class="content-md" id="contenedor">
-       <div class="center">
-         <div class="row">
-           <div class="col-md-4 center" style="text-align: left;">
-             <h1>SCAD-1</h1>
-             <h3>Sistema de Contador A Distancia</h3>
-             <p>Aqui puedes ver nuestros repositorios :)</p> 
-             <button type="button" class="btn btn-primary m-3" onclick="getRepos()">
-              Ver repositorios
-            </button>
-            <button type="button" class="btn btn-primary m-3" onclick="getTramite()">Tramites</button>
-              <ul id="repogit"></ul>
-              <div id="activos"></div>
-           </div>
-          
-           <div class="col-md-7">
-            <img id="welcome" src="./assets/img/welcome1.png" alt="" >
-           </div>
-         </div>
-        
-       </div>
-     
+      <div class="login">
+        <div class="card-login">
+          <div class="circle"></div>
+          <form action="/views/home.html" class="column">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  ><ion-icon name="mail-outline"></ion-icon
+                ></span>
+              </div>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Username"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon2"
+                  ><ion-icon name="lock-closed-outline"></ion-icon
+                ></span>
+              </div>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Username"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <button type="submit">Ingresar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div id="page">
+          <p>Text change</p>
+        </div>
+        <a href="/settings">Settings</a>
+        <p>|</p>
+        <a href="/about">About </a>
+        <p>|</p>
+        <a href="/page">Home</a>
       </div>
     </div>
 
-    <script src="./MenuSettings.js"></script>
-    <script src="./GitRepo.js"></script>
-    <script src="./services/InformationGraph.js"></script>
+    <script>
+      page("/setting", settings);
+      page("/about", about);
+
+      function settings() {
+        console.log("esto funcion");
+      }
+      function about() {
+        console.log("esto funcion");
+      }
+    </script>
     <!-- Iconos de ionic -->
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
