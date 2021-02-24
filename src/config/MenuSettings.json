@@ -1,0 +1,23 @@
+[
+    {
+        "id":1,
+        "section":"Inicio",
+        "icon":"home",
+        "href":"/dashboard"
+    },{
+        "id":2,
+        "section":"Documentacion",
+        "icon":"document",
+        "href":"/dashboard/documents"
+    },{
+        "id":3,
+        "section":"Front-End",
+        "icon":"hammer",
+        "href":"/dashboard/Front-End"
+    },{
+        "id":4,
+        "section":"Back-End",
+        "icon":"hammer",
+        "href":"/dashboard/Back-End"
+    }
+]

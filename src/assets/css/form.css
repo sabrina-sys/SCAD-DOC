@@ -1,63 +1,58 @@
  
-  .contentForm{
+  .Card-Form{
       font-weight: bold;
+      width: 270px;
+      
     }
   
-  h3{
-    margin:0}
-  label{
-      color: #1d1d1d;
-  }
-  .contentForm h3{
-    color:rgb(250, 250, 250);
-    font-size: 25px;
-    text-transform:capitalize;
-    text-align: center;
-    text-shadow: 0 0 15px rgba(236, 236, 236, 0.671); 
-    letter-spacing:1px;
-  }
-  
-  .contentForm form{
+ 
+  .Card-Form form{
     padding: 15px;  
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    border-color: darkgray;
-    background-color: rgba(230, 230, 230, 0.678);
     margin-top: 10px;
+    box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.75);
 }
   
-  label, input[type="email"],input[type="password"] {
-    display: block;
-    margin-bottom: 8px;
-    width: 100%; 
-  }
   
-  input[type="email"],input[type="password"]{
-    padding: 8px;
-    box-sizing: border-box;
+  .Card-Form input {
+    border: 1px #ddd solid;
     border-radius: 5px;
-    background-color: #aaa;
-    color: #1d1d1d;
-    font-weight: bold;
-    border: none;
-    padding-left: 40px
+    outline: none;
+    box-shadow: none;
+    box-decoration-break: clone;
+  }
+  .Card-Form input:focus{
+    outline: none;
+    box-shadow: none;
+    border:1px black solid;
   }
   .buttonLink{
     padding: 8px;
     box-sizing: border-box;
     border-radius: 5px;
     font-size: 12px;
-    background-color:  #1d1d1d;
-    color: #d4d4d4;
+    background-color: var(--color-third);
+    color: var(--color-primary);
     font-weight: bold;
     border: none;
     text-decoration: none;
 
   }
+  .user-photo{
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .user-photo img {
+    border-radius: 50px;
+  }
   .buttonLink:hover{
     transform: translateY(-2px);
-    box-shadow: 0 0 10px black;
   }
   
   .btn-control{

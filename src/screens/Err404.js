@@ -1,12 +1,11 @@
 import React from 'react';
-
+import err from '../assets/img/Err404.png'
 export default class Err404 extends React.Component {
  
   render() {
     return (
       <div >
-        <h3>Error 404 </h3>
-        <h2>Page not Fund</h2>
+       <img src={err} alt="" srcset=""/>
       </div>
     );
   } 
