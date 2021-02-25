@@ -3,12 +3,14 @@ import React from "react";
 import UserPhoto from "../assets/img/logo4.jpg";
 import Auth from "../services/AuthService";
 //import {Link} from 'react-router-dom';
+const photoimg= "https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png";
 export default class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: "alberto@scad.com",
-      pass: "santiago",
+      value: "",
+      pass: "",
+      photo:photoimg
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -17,7 +19,14 @@ export default class Form extends React.Component {
   }
 
   handleChange(event) {
+    
     this.setState({ value: event.target.value });
+    const response = Auth(event.target.value);
+    if(response.length === 1){
+      this.setState({photo: response[0].profile})
+    }else if (this.state.photo !== photoimg) {
+      this.setState({photo:photoimg})
+    } 
   }
   handleChangePass(event) {
     this.setState({ pass: event.target.value });
@@ -25,7 +34,7 @@ export default class Form extends React.Component {
   handleSubmit(event) {
     event.preventDefault(); // pendiente investigar poara que es esto
     const response = Auth(this.state.value);
-    console.log(response);
+
     if (response[0] != undefined) {
       // Hay usuario
       if (response[0].pass === this.state.pass) {
@@ -47,7 +56,7 @@ export default class Form extends React.Component {
       <div className="Card-Form">
         <form onSubmit={this.handleSubmit} className="column">
           <div className="user-photo">
-            <img src={UserPhoto} alt="USerPhoto" />
+            <img id="login_photo" src={this.state.photo} alt="USerPhoto" />
           </div>
           <div className="input-group mb-3">
             <div className="input-group-prepend">

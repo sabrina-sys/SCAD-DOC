@@ -1,7 +1,7 @@
 import "../assets/css/body.css";
 //import IMGteam from "../assets/img/team.png"
 import Repositorio from '../components/Repositorio'
-
+import imgdev from "../assets/img/teamdev.png"
 const Home = () => {
   const repos = [{
     id:1,
@@ -20,7 +20,7 @@ const Home = () => {
   return ( 
     <div className="views row ">
     <div className="block col-md-9">
-      
+      <img id="imgportada" src={imgdev} alt=""/>
       <h2 id="Scad-1">SCAD-ONE</h2>
       <p>Scad-1 es un proyecto integral que abarca todo un sistema tecnologico, incluyendo la integracion de vision artificial, con el fin de proporcionar recursos tecnologios a favor de servicios y establecimientos que son de importancia en nuestra sociedad.</p>
       
@@ -40,6 +40,7 @@ const Home = () => {
         <a href="https://pjreddie.com/darknet/yolo/" target="_blank" className="py-2">@ Yolo</a>
         <a href=" https://learngitbranching.js.org/" target="_blank" className="py-2">@ Learn Git</a>
        <a href="http://git-school.github.io/visualizing-git/" target="_blank" className="py-2"> @ Visualize Git</a>
+       <a href="https://www.diegocmartin.com/tutorial-git/" target="_blank" className="py-2">@ Manual de Git</a>
       </div>
       
       <h2 id="Repositorio">Repositorios</h2>
@@ -58,13 +59,14 @@ const Home = () => {
           </li>
           
           <li>
-           <a href="#Herramienta">Herramienta</a>
+           <a href="#Herramienta">Herramientas</a>
            <ul className="subindice">
             <li><a href="#Herramienta">Trello</a></li>
             <li><a href="#Herramienta">Meet</a></li>
             <li><a href="#Herramienta">React Native</a></li>
             <li><a href="#Herramienta">Mongo DB</a></li>
             <li><a href="#Herramienta">Yolo</a></li>
+            <li><a href="#Herramienta">Lean Git</a></li>
           </ul>
           </li>
           <li>

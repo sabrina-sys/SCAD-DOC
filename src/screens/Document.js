@@ -4,7 +4,7 @@ const Document = () => {
   return (
     <div className="views row ">
       <div className="block col-md-9">
-        <h2>MarkDown</h2>
+        <h2 id="Markdown">MarkDown</h2>
         <p>
           Markdown es un lenguaje de marcado ligero que puede usar para agregar
           elementos de formato a documentos de texto sin formato. Creado por
@@ -884,7 +884,7 @@ const Document = () => {
         <code>
           &lt;https://www.markdownguide.org&gt; &lt;fake@example.com&gt;
         </code>
-        <h2 id="Git">Git</h2>
+        <h2 id="Git">Manual de Git</h2>
         <h3 id="CGit">Conceptos básicos de Git</h3>
         <ul>
           <li>
@@ -938,7 +938,7 @@ const Document = () => {
         <p>
           Con <code>git help</code> en la terminal obtenemos ayuda.
         </p>
-        <h3 id="ConfGi">Configuración de Git</h3>
+        <h3 id="ConfGit">Configuración de Git</h3>
         <p>
           Como mínimo debemos configurar el nombre y el email en la aplicación
           con los siguientes comandos:
@@ -1017,6 +1017,247 @@ const Document = () => {
         <div className="codigo">
           <p>git commit -m “commit inicial”</p>
         </div>
+
+        <h3 id="GitLocal">Trabajando con Git en local</h3>
+
+        <p>
+          Ahora vamos a agregar más contenido al archivo README y hacemos un
+          status. Veremos que ahora el sistema nos indica que hay cambios no
+          enviados al staging:
+        </p>
+        <div className="codigo">
+          <p>git status</p>
+        </div>
+        <img
+          src="https://i1.wp.com/www.diegocmartin.com/wp-content/uploads/2018/12/08-git-status-con-archivos-modificados.png?resize=1024%2C452&ssl=1"
+          alt=""
+          srcset=""
+        />
+
+        <p>
+          Con el mismo procedimiento de antes, agregamos <b>(add)</b> y hacemos
+          un nuevo commit:
+        </p>
+        <img
+          src="https://i2.wp.com/www.diegocmartin.com/wp-content/uploads/2018/12/09-git-commit-con-archivos-modificados.png?w=1023&ssl=1"
+          alt=""
+          srcset=""
+        />
+
+        <p>También podemos hacer el add y el commit en un solo paso con:</p>
+
+        <div className="codigo">
+          <p>git commit -a</p>
+        </div>
+
+        <p>
+          Tal como nos recomienda el propio Git en la captura de arriba. Si
+          queremos también agregar el mensaje quedaría
+        </p>
+
+        <div className="codigo">
+          <p>git commit -am “msj”</p>
+        </div>
+
+        <p>
+          Podemos hacer algunos cambios más y agregar otro archivo, por ejemplo,
+          un index.html al proyecto.
+        </p>
+        <img
+          src="https://i1.wp.com/www.diegocmartin.com/wp-content/uploads/2018/12/10-git-status.png?resize=1024%2C449&ssl=1"
+          alt=""
+          srcset=""
+        />
+        <p>
+          En este caso vamos a agregar los archivos modificados o nuevos al
+          staging de forma recursiva con
+        </p>
+        <div className="codigo">
+          <p>git add .</p>
+        </div>
+        <img
+          src="https://i0.wp.com/www.diegocmartin.com/wp-content/uploads/2018/12/11-git-add-punto.png?w=663&ssl=1"
+          alt=""
+          srcset=""
+        />
+
+        <p>Un nuevo commit:</p>
+        <img
+          src="https://i2.wp.com/www.diegocmartin.com/wp-content/uploads/2018/12/12-nuevo-commit.png?resize=1024%2C199&ssl=1"
+          alt=""
+          srcset=""
+        />
+        <p>
+          Vamos a volver a hacer algún cambio y lo agregamos al staging. Si nos
+          fijamos en la captura de la anterior operación add, el sistema nos
+          indica que podemos sacar un archivo del stage con git reset HEAD y el
+          nombre del archivo. Lo probamos con README:
+        </p>
+
+        <div className="codigo">
+          <p>git reset HEAD README.md</p>
+        </div>
+        <img
+          src="https://i1.wp.com/www.diegocmartin.com/wp-content/uploads/2018/12/13-git-reset.png?w=835&ssl=1"
+          alt=""
+          srcset=""
+        />
+        <p>
+          Un nuevo status nos indicará que hay uno en el staging y otro por
+          agregar:
+        </p>
+        <img
+          src="https://i0.wp.com/www.diegocmartin.com/wp-content/uploads/2018/12/14-git-status-tras-reset.png?resize=1024%2C375&ssl=1"
+          alt=""
+          srcset=""
+        />
+        <p>
+          Como podemos ver, también podemos descartar los cambios en el
+          directorio de trabajo con checkout:
+        </p>
+
+        <div className="codigo">
+          <p>git checkout -- README.md</p>
+        </div>
+        <h3 id="GitRemoto">Trabajando con Git en remoto </h3>
+
+        <h5>Creando un nuevo repositorio en la linea de comando</h5>
+
+        <div className="codigo">
+          <ul>
+            <li>
+              <p>echo "# demo-git" {">>"} README.md</p>
+            </li>
+            <li>
+              <p>git init</p>
+            </li>
+            <li>
+              <p>git add README.md</p>
+            </li>
+            <li>
+              <p>git commit -m "first commit"</p>
+            </li>
+            <li>
+              <p>
+                git remotr add origin git@githun.com:diegocmartin/demo-git.git
+              </p>
+            </li>
+            <li>
+              <p>git push -u origin master</p>
+            </li>
+          </ul>
+          </div>
+
+          <h5>O agrega un repositorio existente desde la linea de comando</h5>
+          <div className="codigo">
+            <ul>
+              <li>
+                <p>
+                  git remote add origin git@github.com:diegocmartin/demo-git.git
+                </p>
+              </li>
+              <li>
+                <p>git push -u origin master</p>
+              </li>
+            </ul>
+          </div>
+          <p>
+            Ahora nos movemos al proyecto con el que queremos trabajar. Vemos
+            que el status no hay nada pendiente y ejecutamos el primer comando.
+          </p>
+          <div className="codigo">
+            <p>git remote -v</p>
+          </div>
+          <div>
+          <p>
+            También podemos agregar repositorios de otros usuarios para recibir
+            con el comando <b>git remote add [nombre] [url]</b>.
+          </p>
+        </div>
+
+        <p>Ejemplo: $ </p>
+        <div className="codigo">
+          <p>git remote add origin git://github.com/paulboone/ticgit.git</p>
+        </div>
+        <p>
+          Para recibir los ficheros de uno de estos repositorios de otro usuario
+          usamos el comando fetch seguido del nombre que hemos puesto en el
+          comando anterior.
+        </p>
+        <p>Ejemplo: $ </p>
+        <div className="codigo">
+          <p>git fetch pb</p>
+        </div>
+        <p>
+          Ahora vamos a enviar los archivos en local al repo remoto con push y
+          la opción -u para establecer un enlace entre ellos, especificando
+          también el repositorio remoto (origin) y la rama de trabajo (master),
+          quedando:
+        </p>
+
+        <div className="codigo">
+          <p>git push -u origin master</p>
+        </div>
+        <p>
+          Una vez establecido el enlace no hará falta usar la opción -u,
+          quedando la instrucción para actualizar los cambios en el repositorio
+          remoto de la siguiente manera:
+        </p>
+
+        <div className="codigo">
+          <p>git push origin master</p>
+        </div>
+        <img
+          src="https://i1.wp.com/www.diegocmartin.com/wp-content/uploads/2018/12/34-Segundo-push.png?w=739&ssl=1"
+          alt=""
+        />
+        <p>Ahora podriamos ver el repositorio actualizado en GitHub:</p>
+
+        <p>
+          Ahora vamos a modificar o agregar algún archivo al repo local y
+          actualizar de nuevo el remoto.
+        </p>
+        <img
+          src="https://i0.wp.com/www.diegocmartin.com/wp-content/uploads/2018/12/36-nuevos-cambios-para-segundo-push.png?w=894&ssl=1"
+          alt=""
+        />
+
+        <p>
+          Si vemos el status ahora, este nos indica que hay cambios pendientes
+          de sincronizar con el remoto:
+        </p>
+        <img
+          src="https://i1.wp.com/www.diegocmartin.com/wp-content/uploads/2018/12/37-nuevo-status-para-segundo-push.png?w=688&ssl=1"
+          alt=""
+        />
+        <p>
+          Aunque ahora estoy trabajando sólo, lo lógico es solicitar los últimos
+          cambios mediante un pull, antes de enviar los nuestros con push, para
+          evitar conflictos con otros miembros del equipo. De modo que
+          ejecutamos:
+        </p>
+
+        <div className="codigo">
+          <ul>
+            <li>
+              <p>git pull origin master</p>
+            </li>
+            <li>
+              <p>git push origin master</p>
+            </li>
+          </ul>
+        </div>
+        <img
+          src="https://i1.wp.com/www.diegocmartin.com/wp-content/uploads/2018/12/38-pull-y-push-para-trabajar-con-otros-participantes-en-GitHub.png?w=891&ssl=1"
+          alt=""
+        />
+
+        <p>Ya podemos ver los nuevos cambios en el repositorio remoto.</p>
+
+        <p>
+          Al hacer pull, el sistema recupera y trata de unir la rama remota con
+          la local, mientras que con el comando fetch que veíamos antes no.
+        </p>
       </div>
       <div className="indice col-md-3">
         <ul>
@@ -1050,10 +1291,13 @@ const Document = () => {
               <li>
                 <a href="#ConfGit">Configuracion de Git</a>
               </li>
+              <li>
+                <a href="#GitLocal">Trabajando con Git en local</a>
+              </li>
+              <li>
+                <a href="#GitRemoto">Trabajando con Git en remoto</a>
+              </li>
             </ul>
-          </li>
-          <li>
-            <a href="#Repositorio">Repositorio</a>
           </li>
         </ul>
       </div>
