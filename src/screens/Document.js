@@ -1139,7 +1139,7 @@ const Document = () => {
             </li>
             <li>
               <p>
-                git remotr add origin git@githun.com:diegocmartin/demo-git.git
+                git remote add origin git@githun.com:diegocmartin/demo-git.git
               </p>
             </li>
             <li>
